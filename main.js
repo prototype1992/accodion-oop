@@ -8,7 +8,6 @@ class Pane {
 
     this.header = document.createElement('div');
     this.header.classList.add('pane__header');
-    this.header.textContent = this.title;
     this.element.appendChild( this.header );
 
     this.content = document.createElement('div');
@@ -17,6 +16,16 @@ class Pane {
 
     // добавляем в аккордеон
     accordeon.appendChild( this.element );
+
+    // Вызываем изменение заголовка
+    console.log(title);
+    this.setTitle(title);
+
+    // event click
+    this.header.addEventListener('click', (e)=> {
+      e.preventDefault();
+      this.content.classList.toggle('pane__content--toggle');
+    })
   }
 
   setTitle(title) {
@@ -42,11 +51,10 @@ class Accordeon {
 
 // создаем экземпляр класса Accordeon
 let accordeon = new Accordeon();
-
 let pane1 = accordeon.addPane('Панель 1');
 let pane2 = accordeon.addPane('Панель 2');
 let pane3 = accordeon.addPane('Панель 3');
+pane1.setContent('Содержимое панели 1 очень длинно написано мною');
+pane2.setContent('Содержимое панели 2 очень длинно написано мною');
+pane3.setContent('Содержимое панели 3 очень длинно написано мною');
 
-pane1.setContent('Содержимое панели 1');
-pane2.setContent('Содержимое панели 2');
-pane3.setContent('Содержимое панели 3');

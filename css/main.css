@@ -1,0 +1,39 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+}
+
+.accordeon {
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.pane {
+  border: 1px solid #999;
+  margin-bottom: 10px;
+}
+.pane__header {
+  padding: 10px;
+  background-color: #eeeeee;
+  font-weight: bold;
+  border-bottom: 1px solid #999;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+}
+
+.pane__content {
+  padding: 0;
+  visibility: hidden;
+  height: 0;
+  transition: height 10s linear;
+}
+.pane__content--toggle {
+  padding: 10px;
+  visibility: visible;
+  height: auto;
+}
