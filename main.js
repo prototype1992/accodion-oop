@@ -8,6 +8,7 @@ class Pane {
 
     this.header = document.createElement('div');
     this.header.classList.add('pane__header');
+    this.header.textContent = this.title;
     this.element.appendChild( this.header );
 
     this.content = document.createElement('div');
@@ -46,11 +47,6 @@ let pane1 = accordeon.addPane('Панель 1');
 let pane2 = accordeon.addPane('Панель 2');
 let pane3 = accordeon.addPane('Панель 3');
 
-pane1.setTitle('Панель 1');
 pane1.setContent('Содержимое панели 1');
-
-pane2.setTitle('Панель 2');
 pane2.setContent('Содержимое панели 2');
-
-pane3.setTitle('Панель 3');
 pane3.setContent('Содержимое панели 3');
